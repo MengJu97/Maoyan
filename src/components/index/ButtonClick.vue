@@ -27,7 +27,7 @@ export default {
   width: .47rem;
   height: .27rem;
 
-  line-height: 28px;
+  line-height: .28rem;
   text-align: center;
   box-sizing: border-box;
   background-color: #f03d37;

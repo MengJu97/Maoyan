@@ -103,7 +103,7 @@ export default {
     width: 100%;
 
     .score-title {
-      font-size: 13px;
+      font-size: .13rem;
       color: #666;
     }
 

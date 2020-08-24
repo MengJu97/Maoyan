@@ -1,7 +1,14 @@
 <template>
   <div class="switch-hot">
-    <a v-for="(item,index) in switchHot" :key="index" href="javascript:;" :class="{active:isActive===index}"
-       @click="changeActive(index,$event)">{{ item }}</a>
+    <!--    <a v-for="(item,index) in switchHot" :key="index" href="javascript:;" :class="{active:isActive===index}"-->
+    <!--       @click="changeActive(index,$event)">-->
+    <!--      {{ item.name }}-->
+    <!--    </a>-->
+    <router-link v-for="(item,index) in switchHot" :key="index" active-class="active" :to="item.path" >
+      {{ item.name }}
+    </router-link>
+
+
     <div class="active-mark" ref="mark"></div>
   </div>
 </template>
@@ -11,7 +18,24 @@ export default {
   name: "SwitchHot",
   data() {
     return {
-      switchHot: ['热映', '影院', '待映', '经典电影'],
+      switchHot: [
+        {
+          name: '热映',
+          path: '/index/hot'
+        },
+        {
+          name: '影院',
+          path: '/index/cinema'
+        },
+        {
+          name: '待映',
+          path: '/index/coming'
+        },
+        {
+          name: '经典电影',
+          path: '/index/classic'
+        }
+      ],
       isActive: 0,
       toLeft: 0
     }
@@ -22,6 +46,8 @@ export default {
   },
   methods: {
     changeActive(i, e) {
+      console.log(i)
+
       this.isActive = i;
       let obj = this.$refs.mark;
       let end = (e.target.offsetLeft + (e.target.offsetWidth - obj.offsetWidth) / 2) / 100 - 0.145;

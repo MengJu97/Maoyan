@@ -1,9 +1,9 @@
 <template>
   <div class="footer-nav-bar">
-    <a href="javascript:;" v-for="(item,index) in footerBarItem" :key="index">
+    <router-link v-for="(item,index) in footerBarItem" :key="index" :to="item.path" active-class="active">
       <img src="" alt="">
       <span>{{ item.title }}</span>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -12,7 +12,28 @@ export default {
   name: "Footer",
   data() {
     return {
-      footerBarItem: [{title: '电影/影院'}, {title: '视频'}, {title: '小视频'}, {title: '演出'}, {title: '我的'}]
+      footerBarItem: [
+        {
+          title: '电影/影院',
+          path: '/index/hot'
+        },
+        {
+          title: '视频',
+          path: '/video'
+        },
+        {
+          title: '小视频',
+          path: '/short'
+        },
+        {
+          title: '演出',
+          path: '/show'
+        },
+        {
+          title: '我的',
+          path: '/mine'
+        }
+      ]
     }
   }
 }
@@ -53,6 +74,10 @@ export default {
     display: block;
     width: .25rem;
     height: .25rem;
+  }
+
+  .active {
+    color: #f03d37;
   }
 }
 

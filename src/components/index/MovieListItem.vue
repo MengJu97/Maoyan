@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="movie-list-item" v-for="(item,index) in list"   :key="item.id">
+  <div style="width: 100%">
+    <div class="movie-list-item" v-for="(item,index) in list" :key="item.id" @click="toDetail(item.id)">
       <MoviePoster :img="item.img"></MoviePoster>
       <MovieContent :item="item"></MovieContent>
     </div>
@@ -18,7 +18,12 @@ export default {
     MoviePoster,
     MovieContent
   },
-  props:['list']
+  props: ['list'],
+  methods: {
+    toDetail(id) {
+      this.$router.push('/detail/' + id);
+    }
+  }
 }
 </script>
 

@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <Index></Index>
+<!--    <Index></Index>-->
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 
 <script>
-import Index from "./views/Index";
+import Footer from "./components/index/Footer";
 
 export default {
   data() {
     return {}
   },
   components: {
-    Index
+    Footer
   }
 }
 </script>

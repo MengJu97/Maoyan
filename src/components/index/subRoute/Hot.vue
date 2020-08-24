@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import TopRated from "./TopRated";
-import MovieList from "./MovieList";
+import TopRated from "../TopRated";
+import MovieList from "../MovieList";
 
 import BScroll from 'better-scroll'
 
 export default {
-  name: "ScrollPart",
+  name: "Hot",
   props: ['list'],
   components: {
     TopRated,

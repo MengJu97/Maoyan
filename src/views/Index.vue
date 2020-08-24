@@ -4,9 +4,9 @@
     <div class="main-area">
       <open-app></open-app>
       <top-bar></top-bar>
-      <scroll-part :list="list"></scroll-part>
+<!--      <scroll-part :list="list"></scroll-part>-->
+      <router-view></router-view>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
@@ -14,7 +14,6 @@
 import Header from "../components/index/Header";
 import OpenApp from "../components/index/OpenApp";
 import TopBar from "../components/index/TopBar";
-import Footer from "../components/index/Footer";
 import ScrollPart from "../components/index/ScrollPart";
 
 import {getIndexList} from "../Utils/api";
@@ -25,7 +24,6 @@ export default {
     Header,
     OpenApp,
     TopBar,
-    Footer,
     ScrollPart
   },
   data() {
