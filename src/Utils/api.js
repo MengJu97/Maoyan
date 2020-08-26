@@ -18,4 +18,10 @@ export function getMovieDetail(params) {
 export function getCinemaList(params) {
     return http.post('/ajax/movie?forceUpdate=1598404020076', params)
 }
+
 //1598327132830
+
+//获取单个电影院的信息
+export function getSpecificCinema(params) {
+    return http.get('/ajax/cinemaDetail', params);
+}

@@ -12,29 +12,29 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        redirect:'/index/hot'
+        redirect: '/index/hot'
     },
     {
         path: '/index',
         component: () => import ("../views/Index"),
         children: [
             {
-                path:'hot',
-                component:()=>import("../components/index/subRoute/Hot")
+                path: 'hot',
+                component: () => import("../components/index/subRoute/Hot")
             },
             {
                 path: 'cinema',
-                component:()=>import("../components/index/subRoute/Cinema")
+                component: () => import("../components/index/subRoute/Cinema")
             },
             {
                 path: 'coming',
-                component:()=>import("../components/index/subRoute/Coming")
+                component: () => import("../components/index/subRoute/Coming")
             },
             {
                 path: 'classic',
-                component:()=>import("../components/index/subRoute/Classic")
+                component: () => import("../components/index/subRoute/Classic")
             }
-            ]
+        ]
     },
     {
         path: '/video',
@@ -55,7 +55,11 @@ const routes = [
     },
     {
         path: '/detail/:id',
-        component:()=>import("../views/MovieDetail")
+        component: () => import("../views/MovieDetail")
+    },
+    {
+        path: '/cinema/:id',
+        component:()=>import('../views/SpecificCinema')
     }
 ]
 
