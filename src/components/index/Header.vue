@@ -1,13 +1,25 @@
 <template>
   <header>
-    猫眼电影
+    <div class="go-back" @click="goBack">
+      &lt;
+    </div>
+    <span>{{ title }}</span>
   </header>
 </template>
 
 <script>
 
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {}
+  },
+  props: ['title'],
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    }
+  }
 }
 </script>
 
@@ -30,5 +42,15 @@ header {
   left: 0;
   top: 0;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .go-back {
+    width: .5rem;
+    height: .5rem;
+    font-size: .22rem;
+    position: absolute;
+    left: 0;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <Header :title="'猫眼电影'"></Header>
     <div class="main-area">
       <open-app></open-app>
       <top-bar></top-bar>

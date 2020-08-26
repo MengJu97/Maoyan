@@ -8,3 +8,14 @@ export function getIndexList() {
 export function getMoreComing(data1, data2) {
     return http.get('/ajax/moreComingList?token=&' + data1 + '=' + data2)
 }
+
+//获取电影详情信息
+export function getMovieDetail(params) {
+    return http.get('/ajax/detailmovie', params);
+}
+
+//获取电影院信息
+export function getCinemaList(params) {
+    return http.post('/ajax/movie?forceUpdate=1598404020076', params)
+}
+//1598327132830
